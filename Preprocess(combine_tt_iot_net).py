@@ -8,6 +8,8 @@ from sklearn.compose import ColumnTransformer
 from sklearn.compose import make_column_transformer
 from sklearn.pipeline import make_pipeline
 
+# Replace two points (..) with the file path.
+
 tt_fridge = 'Get the csv file path'
 tt_door = 'Get the csv file path'
 tt_gps = 'Get the csv file path'
@@ -213,6 +215,7 @@ tt_orig_iot_net_concat1_le_nan1_data.to_csv('../tt_orig_iot_net_concat1_le_nan1_
 # So you need to affect your transformation to your features :
 # features = features.apply(lambda x: MinMaxScaler().fit_transform(x))
 # )
+
 
 
 
