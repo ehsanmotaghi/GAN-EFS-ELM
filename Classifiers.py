@@ -42,6 +42,8 @@ except Exception:
 warnings.filterwarnings("ignore", category=UserWarning)
 np.random.seed(42)
 
+# Replace two points (..) with the file path.
+
 
 def _sigmoid(x: np.ndarray) -> np.ndarray:
     return 1.0 / (1.0 + np.exp(-x))
@@ -2621,21 +2623,22 @@ def main():
     print("="*100)
     
     # Load datasets
+    # Replace two points (..) with the file path.
     try:
         ## No-GAN, No-EFS
-        df_res_39 = pd.read_csv('E:/00-IOT/0-thesis/ch5/deploy/code/DATASETS/github/000000-fs-efs/00000-rank/cursor/dataset-final/resampled_data_simulator1_39.csv')
+        df_res_39 = pd.read_csv('../No-GAN_No-EFS(resampled_39).csv')
         print("✅ Loaded: No-GAN, No-EFS (df_res_39)")
         
         ## No-GAN, Yes-EFS
-        df_res_fs_14 = pd.read_csv('E:/00-IOT/0-thesis/ch5/deploy/code/DATASETS/github/000000-fs-efs/00000-rank/cursor/dataset-final/resampled_data_simulator1_39_fs_14.csv')
+        df_res_fs_14 = pd.read_csv('../No-GAN_Yes-EFS(resampled_39_efs_14).csv')
         print("✅ Loaded: No-GAN, Yes-EFS (df_res_fs_14)")
         
         ## Yes-GAN, No-EFS
-        df_gan_39 = pd.read_csv('E:/00-IOT/0-thesis/ch5/deploy/code/DATASETS/github/000000-fs-efs/00000-rank/cursor/dataset-final/gan balanced/cgan_balanced_minmax_39.csv')
+        df_gan_39 = pd.read_csv('../Yes-GAN_No-EFS(cgan_balanced_39).csv')
         print("✅ Loaded: Yes-GAN, No-EFS (df_gan_39)")
         
         ## Yes-GAN, Yes-EFS
-        df_gan_fs_12 = pd.read_csv('E:/00-IOT/0-thesis/ch5/deploy/code/DATASETS/github/000000-fs-efs/00000-rank/cursor/dataset-final/gan balanced/cgan_balanced_minmax_39_fs_12.csv')
+        df_gan_fs_12 = pd.read_csv('../Yes-GAN_Yes-EFS(cgan_balanced_39_efs_12).csv')
         print("✅ Loaded: Yes-GAN, Yes-EFS (df_gan_fs_12)")
         
     except FileNotFoundError as e:
